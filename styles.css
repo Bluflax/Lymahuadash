@@ -35,12 +35,31 @@ body {
 .indicator {
     width: 56px;
     height: 56px;
-    background-color: #989898;
     border-radius: 50%;
+}
+
+.fine {
+    background-color: #28c840;
+}
+
+.issue {
+    background-color: #f8cd25;
+}
+
+.offline {
+    background-color: #f12719;
+}
+
+.onboarding {
+    background-color: #989898;
 }
 
 .statustext {
     margin-left: 25px;
+}
+
+.loading {
+    opacity: 0.5;
 }
 
 .fixed {
