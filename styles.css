@@ -29,7 +29,7 @@ body {
     width: fit-content;
     margin: 0 auto;
     font-size: 80px;
-    opacity: 0.9;
+    transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .indicator {
@@ -51,15 +51,16 @@ body {
 }
 
 .onboarding {
-    background-color: #989898;
+    background-color: #ffffff;
 }
 
 .statustext {
-    margin-left: 25px;
+    margin-left: 18px;
 }
 
 .loading {
-    opacity: 0.5;
+    opacity: 0;
+    transition: opacity 4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .failed {
@@ -67,7 +68,8 @@ body {
 }
 
 .fixed {
-    display: none;
+    display: flex;
+    align-items: center;
     font-family: 'SF', Arial, sans-serif;
     width: fit-content;
     position: fixed;
@@ -77,10 +79,19 @@ body {
     opacity: 0.7;
 }
 
+.info {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#recheck {
+    display: none;
+}
+
 @media (max-width: 700px) {
     .statustext {
         font-size: 40px;
-        margin-left: 8px;
+        margin-left: 9px;
     }
     .indicator {
         width: 30px;
