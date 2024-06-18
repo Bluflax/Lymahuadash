@@ -1,11 +1,14 @@
 const indicator = document.getElementById('indicator');
 const statustextcontainer = document.getElementById('statustext');
-const bottominfo = document.getElementById('bottominfo');
+const statusprovider = document.getElementById('statusprovider');
+const recheck = document.getElementById('recheck');
 const theurl = 'https://app.simplenote.com/publish/BMPHf1';
 
 function refresh() {
     location.reload(true);
 }
+
+statusprovider.style.opacity = '0.5';
 
 async function fetchContent(url) {
     try {
@@ -25,7 +28,8 @@ async function fetchContent(url) {
 
         const textContent = doc.body.textContent || doc.body.innerText;
         indicator.classList.remove('onboarding');
-        statustextcontainer.classList.remove('loading');
+        statusprovider.classList.remove('loading');
+        statusprovider.style.opacity = '0.9';
 
         if (textContent.includes('fantasy1')) {
             statustextcontainer.innerText = 'Working fine';
@@ -43,7 +47,7 @@ async function fetchContent(url) {
     } catch (error) {
         console.error('Fetch error:', error);
         indicator.style.display = 'none';
-        statustextcontainer.classList.remove('loading');
+        statusprovider.classList.remove('loading');
         statustextcontainer.classList.add('failed');
         statustextcontainer.innerText = 'Failed to get status';
     }
@@ -52,6 +56,6 @@ async function fetchContent(url) {
 
 fetchContent(theurl);
 
-bottominfo.style.display = 'block';
+recheck.style.display = 'flex';
 
 
