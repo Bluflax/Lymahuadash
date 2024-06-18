@@ -2,7 +2,7 @@ const indicator = document.getElementById('indicator');
 const statustextcontainer = document.getElementById('statustext');
 const statusprovider = document.getElementById('statusprovider');
 const recheck = document.getElementById('recheck');
-const theurl = 'https://app.simplenote.com/publish/BMPHf1';
+const theurl = 'https://app.simplenote.com/publish/ttcS9n';
 
 function refresh() {
     location.reload(true);
