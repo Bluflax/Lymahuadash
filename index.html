@@ -8,11 +8,14 @@
 </head>
 <body>
     <div class="filler"></div>
-    <div class="status">
+    <div class="status loading" id="statusprovider">
         <div class="indicator onboarding" id="indicator"></div>
-        <p class="statustext loading" id="statustext">Checking Status...</p>
+        <p class="statustext" id="statustext">Checking Status...</p>
     </div>
-    <p class="fixed" id="bottominfo" onclick="refresh()">2024 Lymahuaa | Check again</p>
+    <div class="fixed" id="bottominfo">
+        <p class="info" id="info">2024 Lymahuaa</p>
+        <div class="info" id="recheck" onclick="refresh()">Check again</div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
