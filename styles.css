@@ -62,7 +62,12 @@ body {
     opacity: 0.5;
 }
 
+.failed {
+    color: #cf3e12ec;
+}
+
 .fixed {
+    display: none;
     font-family: 'SF', Arial, sans-serif;
     width: fit-content;
     position: fixed;
