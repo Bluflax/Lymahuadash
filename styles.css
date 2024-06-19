@@ -20,17 +20,19 @@ body {
 }
 
 .filler {
-    height: 28vh;
+    height: 38vh;
 }
+
 
 .status {
     display: flex;
     align-items: center;
     width: fit-content;
+    height: 100px;
     margin: 0 auto;
     font-size: 80px;
     opacity: 0.9;
-    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .indicator {
@@ -39,33 +41,37 @@ body {
     border-radius: 50%;
 }
 
-.fine {
-    background-color: #28c840;
-}
-
-.issue {
-    background-color: #f8cd25;
-}
-
-.offline {
-    background-color: #f12719;
-}
-
-.onboarding {
-    background-color: var(--text-color);
-}
-
 .statustext {
     margin-left: 18px;
 }
 
-.loading {
-    opacity: 0;
-    transition: opacity 3s cubic-bezier(0.165, 0.84, 0.44, 1);
+.customdescript {
+    width: fit-content;
+    max-width: 320px;
+    margin: 0 auto;
+    padding: 0 10px 0 10px;
+    
 }
 
-.failed {
-    color: #f12719e6;
+.showcustom {
+    margin: 15px auto;
+    opacity: 0.7;
+}
+
+.cosdata {
+    display: block;
+    width: fit-content;
+    align-items: center;
+}
+
+.cosstate {
+    display: flex;
+    width: fit-content;
+    max-width: 370px;
+}
+
+.hidden {
+    display: none;
 }
 
 .fixed {
@@ -87,16 +93,50 @@ body {
 
 #recheck {
     display: none;
-    padding: 0 4px 0 4px;
+    padding: 0 4px 0 3px;
     letter-spacing: -0.5px;
     color: #111111;
     background-color: hsl(0, 0%, 100%);
-    border: 1px solid #111111;
+    border: 1.5px solid #8d8d8dab;
     border-radius: 6px;
-    opacity: 0.94;
+    opacity: 0.9;
+}
+
+
+
+.fine {
+    background-color: #28c840;
+}
+
+.issue {
+    background-color: #f8cd25;
+}
+
+.offline {
+    background-color: #f12719;
+}
+
+.customized {
+    background-color: #195df1;
+}
+
+.onboarding {
+    background-color: var(--text-color);
+}
+
+.loading {
+    opacity: 0;
+    transition: opacity 3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.failed {
+    color: #f12719e6;
 }
 
 @media (max-width: 700px) {
+    .status {
+        height: 50px;
+    }
     .statustext {
         font-size: 40px;
         margin-left: 9px;
