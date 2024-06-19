@@ -2,19 +2,24 @@ const indicator = document.getElementById('indicator');
 const statustextcontainer = document.getElementById('statustext');
 const statusprovider = document.getElementById('statusprovider');
 const recheck = document.getElementById('recheck');
+//const theurl = 'https://account.google.com./';
 const theurl = 'https://app.simplenote.com/publish/ttcS9n';
 
 function refresh() {
-    location.reload(true);
+    window.location.reload(true);
 }
 
-statusprovider.style.opacity = '0.5';
+
+newuxtimeout = setTimeout(() => {
+    statusprovider.style.opacity = '0.5';
+}, 1000);
 
 async function fetchContent(url) {
     try {
         const proxyUrl = 'https://api.allorigins.win/get?url=';
         const response = await fetch(proxyUrl + encodeURIComponent(url), {
-            method: 'GET'
+            method: 'GET',
+            cache: 'no-store'
         });
         if (!response.ok) {
             throw new Error('Network response was not ok');
@@ -27,6 +32,7 @@ async function fetchContent(url) {
         const doc = parser.parseFromString(htmlString, 'text/html');
 
         const textContent = doc.body.textContent || doc.body.innerText;
+        clearTimeout(newuxtimeout);
         indicator.classList.remove('onboarding');
         statusprovider.classList.remove('loading');
         statusprovider.style.opacity = '0.9';
@@ -46,10 +52,12 @@ async function fetchContent(url) {
         }
     } catch (error) {
         console.error('Fetch error:', error);
+        statustextcontainer.innerText = 'Failed to get status';
         indicator.style.display = 'none';
         statusprovider.classList.remove('loading');
+        clearTimeout(newuxtimeout);
+        statusprovider.style.opacity = '0.9';
         statustextcontainer.classList.add('failed');
-        statustextcontainer.innerText = 'Failed to get status';
     }
 }
 
