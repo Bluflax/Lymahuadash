@@ -16,7 +16,7 @@ body {
     font-family: 'SFD', Arial, sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
-    font-size: 14px;
+    font-size: 20px;
 }
 
 .filler {
@@ -30,7 +30,7 @@ body {
     width: fit-content;
     height: 100px;
     margin: 0 auto;
-    font-size: 80px;
+    font-size: 160px;
     opacity: 0.9;
     transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -145,6 +145,16 @@ body {
     .indicator {
         width: 30px;
         height: 30px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .body {
+        font-size: 14px;
+    }
+    .statustext {
+        font-size: 80px;
+        margin-left: 9px;
     }
 }
 
