@@ -9,6 +9,7 @@ const recheck = document.getElementById('recheck');
 const theurl = 'https://app.simplenote.com/publish/ttcS9n';
 
 function refresh() {
+    statusprovider.style.opacity = '0';
     window.location.reload(true);
 }
 
