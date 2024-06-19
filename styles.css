@@ -153,8 +153,16 @@ body {
         font-size: 20px;
         margin-top: 70px;
     }
+    .fixed {
+        font-size: 20px;
+    }
     .statustext {
         font-size: 160px;
+        margin-left: 35px;
+    }
+    .indicator {
+        height: 108px;
+        width: 108px;
     }
 }
 
