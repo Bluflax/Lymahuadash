@@ -10,7 +10,9 @@ const theurl = 'https://app.simplenote.com/publish/ttcS9n';
 
 function refresh() {
     statusprovider.style.opacity = '0';
+    setTimeout(() => {
     window.location.reload(true);
+    }, 500);
 }
 
 
