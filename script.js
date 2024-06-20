@@ -10,9 +10,11 @@ const theurl = 'https://app.simplenote.com/publish/ttcS9n';
 
 function refresh() {
     statusprovider.style.opacity = '0';
+    statusprovider.style.transition = 'opacity 0.15s ease-in';
+    customprovider.style.opacity = '0';
     setTimeout(() => {
     window.location.reload(true);
-    }, 500);
+    }, 150);
 }
 
 
@@ -54,7 +56,7 @@ async function fetchContent(url) {
             statustextcontainer.innerText = 'Malfunctioned';
             indicator.classList.add('offline');
         } else if (textContent.includes('status=c')) {
-            const regexmain = /c!!([\s\S]*?)&&&/;
+            const regexmain = /status=c([\s\S]*?)@/;
             const matchmain = textContent.match(regexmain);
             let customcontentmain = 'Customized';
             if (matchmain && matchmain[1]) {
@@ -67,8 +69,8 @@ async function fetchContent(url) {
             statustextcontainer.innerText = 'Cannot show status';
         }
 
-        if (textContent.includes('customization=yes')) {
-            const regex = /info1--([\s\S]*?)&&/;
+        if (textContent.includes('customization=yes=')) {
+            const regex = /customization=yes=([\s\S]*?)@/;
             const match = textContent.match(regex);
             let customcontent = '';
             if (match && match[1]) {
@@ -76,11 +78,11 @@ async function fetchContent(url) {
             }
             cos1.classList.remove('hidden');
             cos1.innerText = customcontent;
-            if (textContent.includes('customization=yes&type=data')) {
+            if (textContent.includes('customizationtype=data')) {
                 customprovider.classList.remove('hidden');
                 customprovider.classList.add('data');
                 
-            } else if (textContent.includes('customization=yes&type=state')) {
+            } else if (textContent.includes('customizationtype=state')) {
                 customprovider.classList.remove('hidden');
                 customprovider.classList.add('state');
             }
