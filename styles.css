@@ -48,7 +48,7 @@ body {
 
 
 .showcustom {
-    margin: 30px auto;
+    margin: 50px auto;
     opacity: 0.7;
     font-family: 'SF', Arial, sans-serif;
     transition: opacity 0.2s ease-in-out;
@@ -100,11 +100,7 @@ body {
     display: none;
     padding: 0 4px 0 3px;
     letter-spacing: -0.5px;
-    color: #111111;
-    background-color: hsl(0, 0%, 100%);
-    border: 1.5px solid #8d8d8dab;
-    border-radius: 6px;
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
 
@@ -155,18 +151,21 @@ body {
 @media (min-width: 1440px) {
     .showcustom {
         font-size: 20px;
-        margin-top: 70px;
+        margin: 60px auto;
     }
     .fixed {
         font-size: 20px;
+    }
+    .status {
+        height: 180px;
     }
     .statustext {
         font-size: 160px;
         margin-left: 35px;
     }
     .indicator {
-        height: 108px;
-        width: 108px;
+        height: 110px;
+        width: 110px;
     }
 }
 
