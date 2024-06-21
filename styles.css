@@ -74,10 +74,6 @@ body {
     max-width: 370px;
 }
 
-.hidden {
-    display: none;
-    opacity: 0;
-}
 
 .fixed {
     display: flex;
@@ -97,9 +93,9 @@ body {
 }
 
 #recheck {
-    display: none;
     padding: 0 4px 0 3px;
     letter-spacing: -0.5px;
+    text-decoration: underline;
     opacity: 0.8;
 }
 
@@ -132,6 +128,11 @@ body {
 
 .failed {
     color: #f12719e6;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
 }
 
 @media (max-width: 700px) {

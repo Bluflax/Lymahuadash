@@ -5,13 +5,16 @@ const customprovider = document.getElementById('showcustom');
 const cos1 = document.getElementById('cos1');
 const cos2 = document.getElementById('cos2');
 const recheck = document.getElementById('recheck');
-//const theurl = 'https://account.google.com./';
+//const theurl = 'https://www.google.com/';
+//const theurl = 'https://twitter.com';
+//const theurl = 'https://zhere.next';
 const theurl = 'https://app.simplenote.com/publish/ttcS9n';
 
 function refresh() {
     statusprovider.style.opacity = '0';
     statusprovider.style.transition = 'opacity 0.15s ease-in';
     customprovider.style.opacity = '0';
+    recheck.style.opacity = '1';
     setTimeout(() => {
     window.location.reload(true);
     }, 150);
@@ -45,6 +48,7 @@ async function fetchContent(url) {
         indicator.classList.remove('onboarding');
         statusprovider.classList.remove('loading');
         statusprovider.style.opacity = '0.9';
+        recheck.classList.remove('hidden');
 
         if (textContent.includes('status=s1')) {
             statustextcontainer.innerText = 'Working fine';
@@ -55,8 +59,8 @@ async function fetchContent(url) {
         } else if (textContent.includes('status=s99')) {
             statustextcontainer.innerText = 'Malfunctioned';
             indicator.classList.add('offline');
-        } else if (textContent.includes('status=c')) {
-            const regexmain = /status=c([\s\S]*?)@/;
+        } else if (textContent.includes('status==')) {
+            const regexmain = /status==([\s\S]*?)@/;
             const matchmain = textContent.match(regexmain);
             let customcontentmain = 'Customized';
             if (matchmain && matchmain[1]) {
@@ -85,6 +89,8 @@ async function fetchContent(url) {
             } else if (textContent.includes('customizationtype=state')) {
                 customprovider.classList.remove('hidden');
                 customprovider.classList.add('state');
+            } else {
+                cos1.innerText = 'Cannot show message';
             }
         }
     } catch (error) {
