@@ -147,16 +147,12 @@ body {
         width: 30px;
         height: 30px;
     }
+    .showcustom {
+        margin: 15px auto;
+    }
 }
 
 @media (min-width: 1440px) {
-    .showcustom {
-        font-size: 20px;
-        margin: 60px auto;
-    }
-    .fixed {
-        font-size: 20px;
-    }
     .status {
         height: 180px;
     }
@@ -167,6 +163,13 @@ body {
     .indicator {
         height: 110px;
         width: 110px;
+    }
+    .fixed {
+        font-size: 20px;
+    }
+    .showcustom {
+        font-size: 20px;
+        margin: 60px auto;
     }
 }
 
