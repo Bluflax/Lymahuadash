@@ -100,7 +100,9 @@ body {
 }
 
 
-
+.failed {
+    color: #f12719e6;
+}
 .fine {
     background-color: #28c840;
 }
@@ -126,9 +128,7 @@ body {
     transition: opacity 3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.failed {
-    color: #f12719e6;
-}
+
 
 .hidden {
     display: none;

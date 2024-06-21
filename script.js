@@ -41,7 +41,7 @@ async function fetchContent(url) {
         indicator.classList.remove('onboarding');
         statusprovider.classList.remove('loading');
         statusprovider.style.opacity = '0.9';
-        recheck.classList.remove('hidden');
+        statustextcontainer.classList.remove('failed');
 
         if (textContent.includes('status=s1')) {
             statustextcontainer.innerText = 'Working fine';
