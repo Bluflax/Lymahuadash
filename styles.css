@@ -110,7 +110,7 @@ body {
 .portux {
     position: absolute;
     width: 100%;
-    border-bottom: 30px solid #8b8b8b;
+    border-bottom: 30px solid #195df1;
     bottom: 0px;
     filter: blur(0px);
     opacity: 0;
