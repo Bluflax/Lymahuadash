@@ -45,7 +45,7 @@ async function fetchContent(url) {
         statusprovider.style.opacity = '0.9';
         statustextcontainer.classList.remove('failed');
 
-        recheckux.classList.remove('activatedux');
+        
 
         recheck.style.display = 'flex';
 
@@ -110,10 +110,11 @@ fetchContent(theurl);
 
 }
 
-
-
 function recheckeff() {
-    recheckux.classList.add('activatedux');
+    recheckux.classList.remove('deactivatedux');
+    setTimeout(() => {
+        recheckux.classList.add('deactivatedux');
+    }, 490);   
 }
 
 
