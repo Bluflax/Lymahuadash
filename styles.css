@@ -18,6 +18,7 @@ body {
     color: var(--text-color);
     font-size: 14px;
     user-select: none;
+    overflow: hidden;
 }
 
 .filler {
@@ -99,6 +100,29 @@ body {
     opacity: 0.6;
 }
 
+.newuxprovider {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.portux {
+    position: absolute;
+    width: 100%;
+    border-bottom: 30px solid #8b8b8b;
+    bottom: 0px;
+    filter: blur(0px);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-in-out, filter 6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.activatedux {
+    opacity: 1;
+    filter: blur(120px);
+    transition: opacity 0.2s ease-in-out, filter 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
 
 .failed {
     color: #f12719e6;

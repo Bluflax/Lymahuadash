@@ -5,6 +5,7 @@ const customprovider = document.getElementById('showcustom');
 const cos1 = document.getElementById('cos1');
 const cos2 = document.getElementById('cos2');
 const recheck = document.getElementById('recheck');
+const recheckux = document.getElementById('portux');
 //const theurl = 'https://www.google.com/';
 //const theurl = 'https://twitter.com';
 //const theurl = 'https://zhere.next';
@@ -15,6 +16,7 @@ const theurl = 'https://app.simplenote.com/publish/ttcS9n';
 function jsmain() {
 
 newuxtimeout = setTimeout(() => {
+    indicator.classList.remove('hidden');
     statusprovider.style.opacity = '0.5';
 }, 1000);
 
@@ -43,6 +45,10 @@ async function fetchContent(url) {
         statusprovider.style.opacity = '0.9';
         statustextcontainer.classList.remove('failed');
 
+        recheckux.classList.remove('activatedux');
+
+        recheck.style.display = 'flex';
+
         if (textContent.includes('status=s1')) {
             statustextcontainer.innerText = 'Working fine';
             indicator.classList.add('fine');
@@ -62,7 +68,7 @@ async function fetchContent(url) {
             statustextcontainer.innerText = customcontentmain;
             indicator.classList.add('customized');
         } else {
-            indicator.style.display = 'none';
+            indicator.classList.add('hidden');
             statustextcontainer.innerText = 'Cannot show status';
         }
 
@@ -75,48 +81,57 @@ async function fetchContent(url) {
             }
             cos1.classList.remove('hidden');
             cos1.innerText = customcontent;
+            customprovider.classList.remove('hidden');
+            customprovider.style.opacity = '0.7';
             if (textContent.includes('customizationtype=data')) {
-                customprovider.classList.remove('hidden');
-                customprovider.style.opacity = '0.7';
                 customprovider.classList.add('data');
                 
             } else if (textContent.includes('customizationtype=state')) {
-                customprovider.classList.remove('hidden');
-                customprovider.style.opacity = '0.7';
                 customprovider.classList.add('state');
             } else {
-                cos1.innerText = 'Cannot show message';
+                cos1.innerText = '(Cannot show message)';
+                cos1.style.opacity = '0.5';
             }
         }
     } catch (error) {
         console.error('Fetch error:', error);
-        statustextcontainer.innerText = 'Failed to get status';
-        indicator.style.display = 'none';
-        statusprovider.classList.remove('loading');
         clearTimeout(newuxtimeout);
+        indicator.classList.add('hidden');
+        statusprovider.classList.remove('loading');
+        statustextcontainer.innerText = 'Failed to get status';
         statusprovider.style.opacity = '0.9';
         statustextcontainer.classList.add('failed');
+        recheck.style.display = 'flex';
     }
 }
 
 
 fetchContent(theurl);
 
-recheck.style.display = 'flex';
-
 }
+
+
+
+function recheckeff() {
+    recheckux.classList.add('activatedux');
+}
+
+
+
 
 jsmain();
 
 function refresh() {
+    recheckeff();
     statusprovider.style.opacity = '0';
     statusprovider.style.transition = 'opacity 0.12s ease-in';
     customprovider.style.opacity = '0';
-    recheck.style.opacity = '1';
+    recheck.style.display = 'none';
     setTimeout(() => {
     //window.location.reload(true);
     statusprovider.style.transition = 'opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1)';
     recheck.style.opacity = '0.6';
+    indicator.classList = 'indicator onboarding';
     jsmain();
     }, 120);
 }
