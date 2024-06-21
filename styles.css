@@ -207,13 +207,12 @@ body {
         filter: blur(180px);
         opacity: 1;
         transform: translateY(70px);
-        transition: opacity 0.2s ease-out, height 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
     
     .deactivatedux {
-        height: 10px;
         opacity: 0;
-        transition: opacity 0.2s ease-in, height 0.5s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+        transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
     
     }
     
@@ -227,12 +226,12 @@ body {
         filter: blur(20px);
         opacity: 1;
         transform: translateY(20px);
-        transition: height 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
     
     .deactivateduxstill {
-        height: 0px;
-        transition: height 0.2s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+        opacity: 0;
+        transition: opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
     }
 }
 
