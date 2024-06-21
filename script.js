@@ -6,6 +6,7 @@ const cos1 = document.getElementById('cos1');
 const cos2 = document.getElementById('cos2');
 const recheck = document.getElementById('recheck');
 const recheckux = document.getElementById('portux');
+const recheckuxstill = document.getElementById('portuxstill');
 //const theurl = 'https://www.google.com/';
 //const theurl = 'https://twitter.com';
 //const theurl = 'https://zhere.next';
@@ -45,7 +46,8 @@ async function fetchContent(url) {
         statusprovider.style.opacity = '0.9';
         statustextcontainer.classList.remove('failed');
 
-        recheckux.classList.add('deactivatedux');
+        
+        recheckuxstill.classList.add('deactivateduxstill');
 
         recheck.style.display = 'flex';
 
@@ -116,7 +118,7 @@ function recheckeff() {
     recheckux.classList.remove('deactivatedux');
     setTimeout(() => {
         recheckux.classList.add('deactivatedux');
-    }, 400);   
+    }, 500);   
 }
 
 
@@ -125,8 +127,9 @@ function recheckeff() {
 jsmain();
 
 function refresh() {
-    //recheckeff();
-    recheckux.classList.remove('deactivatedux');
+    recheckeff();
+    //recheckux.classList.remove('deactivatedux');
+    recheckuxstill.classList.remove('deactivateduxstill');
     statusprovider.style.opacity = '0';
     statusprovider.style.transition = 'opacity 0.12s ease-in';
     customprovider.style.opacity = '0';
