@@ -99,6 +99,7 @@ body {
     letter-spacing: -0.5px;
     text-decoration: underline;
     opacity: 0.6;
+    cursor: pointer;
 }
 .newuxprovider {
     z-index: 1;
@@ -109,32 +110,33 @@ body {
 }
 
 .portux {
+    display: none;
     position: absolute;
     width: 100%;
-    height: 60px;
+    height: 0px;
     bottom: 0px;
     background-color: var(--text-color);
-    filter: blur(180px);
-    opacity: 1;
-    transform: translateY(70px);
+    filter: none;
+    opacity: 0;
+    transform: translateY(0px);
     transition: opacity 0.2s ease-out, height 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .deactivatedux {
-    height: 10px;
     opacity: 0;
     transition: opacity 0.2s ease-in, height 0.5s cubic-bezier(0.6, 0.04, 0.98, 0.335);
 
 }
 
 .portuxstill {
+    display: none;
     position: absolute;
     width: 100%;
-    height: 6px;
+    height: 0px;
     bottom: 0px;
     background-color: var(--text-color);
-    filter: blur(20px);
-    opacity: 1;
+    filter: none;
+    opacity: 0;
     transform: translateY(20px);
     transition: height 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -193,6 +195,43 @@ body {
     }
     .showcustom {
         margin: 15px auto;
+    }
+    .portux {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 60px;
+        bottom: 0px;
+        background-color: var(--text-color);
+        filter: blur(180px);
+        opacity: 1;
+        transform: translateY(70px);
+        transition: opacity 0.2s ease-out, height 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    
+    .deactivatedux {
+        height: 10px;
+        opacity: 0;
+        transition: opacity 0.2s ease-in, height 0.5s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+    
+    }
+    
+    .portuxstill {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 6px;
+        bottom: 0px;
+        background-color: var(--text-color);
+        filter: blur(20px);
+        opacity: 1;
+        transform: translateY(20px);
+        transition: height 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    
+    .deactivateduxstill {
+        height: 0px;
+        transition: height 0.2s cubic-bezier(0.6, 0.04, 0.98, 0.335);
     }
 }
 
