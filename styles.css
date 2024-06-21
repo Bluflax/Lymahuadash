@@ -115,7 +115,7 @@ body {
     filter: blur(200px);
     opacity: 1;
     transform: translateY(40px);
-    transition: opacity 0.1s ease-in-out, filter 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: opacity 0.2s ease-in-out, filter 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .deactivatedux {
