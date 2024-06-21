@@ -77,6 +77,7 @@ body {
 
 
 .fixed {
+    z-index: 9;
     display: flex;
     align-items: center;
     font-family: 'SF', Arial, sans-serif;
@@ -89,7 +90,6 @@ body {
 }
 
 .info {
-    z-index: 99;
     margin-left: 5px;
     margin-right: 5px;
 }
@@ -101,6 +101,7 @@ body {
     opacity: 0.6;
 }
 .newuxprovider {
+    z-index: 1;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -110,17 +111,22 @@ body {
 .portux {
     position: absolute;
     width: 100%;
-    border-bottom: 50px solid #195df1;
+    height: 60px;
     bottom: 0px;
-    filter: blur(200px);
+    background-color: var(--text-color);
+    filter: blur(180px);
     opacity: 1;
-    transform: translateY(40px);
-    transition: opacity 0.2s ease-in-out, filter 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: translateY(70px);
+    transition: opacity 0.2s ease-out, filter 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), height 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), tansform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .deactivatedux {
+    height: 0px;
     opacity: 0;
-    filter: blur(20px);
+    transform: translateY(40px);
+    filter: blur(40px);
+    transition: opacity 0.2s ease-in, filter 0,5s cubic-bezier(0.895, 0.03, 0.685, 0.22), height 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22), tansform 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+
 }
 
 .failed {

@@ -45,7 +45,7 @@ async function fetchContent(url) {
         statusprovider.style.opacity = '0.9';
         statustextcontainer.classList.remove('failed');
 
-        
+        recheckux.classList.add('deactivatedux');
 
         recheck.style.display = 'flex';
 
@@ -102,6 +102,8 @@ async function fetchContent(url) {
         statusprovider.style.opacity = '0.9';
         statustextcontainer.classList.add('failed');
         recheck.style.display = 'flex';
+
+        recheckux.classList.add('deactivatedux');
     }
 }
 
@@ -114,7 +116,7 @@ function recheckeff() {
     recheckux.classList.remove('deactivatedux');
     setTimeout(() => {
         recheckux.classList.add('deactivatedux');
-    }, 490);   
+    }, 400);   
 }
 
 
@@ -123,7 +125,8 @@ function recheckeff() {
 jsmain();
 
 function refresh() {
-    recheckeff();
+    //recheckeff();
+    recheckux.classList.remove('deactivatedux');
     statusprovider.style.opacity = '0';
     statusprovider.style.transition = 'opacity 0.12s ease-in';
     customprovider.style.opacity = '0';
