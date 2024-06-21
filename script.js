@@ -10,16 +10,9 @@ const recheck = document.getElementById('recheck');
 //const theurl = 'https://zhere.next';
 const theurl = 'https://app.simplenote.com/publish/ttcS9n';
 
-function refresh() {
-    statusprovider.style.opacity = '0';
-    statusprovider.style.transition = 'opacity 0.15s ease-in';
-    customprovider.style.opacity = '0';
-    recheck.style.opacity = '1';
-    setTimeout(() => {
-    window.location.reload(true);
-    }, 150);
-}
 
+
+function jsmain() {
 
 newuxtimeout = setTimeout(() => {
     statusprovider.style.opacity = '0.5';
@@ -84,10 +77,12 @@ async function fetchContent(url) {
             cos1.innerText = customcontent;
             if (textContent.includes('customizationtype=data')) {
                 customprovider.classList.remove('hidden');
+                customprovider.style.opacity = '0.7';
                 customprovider.classList.add('data');
                 
             } else if (textContent.includes('customizationtype=state')) {
                 customprovider.classList.remove('hidden');
+                customprovider.style.opacity = '0.7';
                 customprovider.classList.add('state');
             } else {
                 cos1.innerText = 'Cannot show message';
@@ -109,3 +104,19 @@ fetchContent(theurl);
 
 recheck.style.display = 'flex';
 
+}
+
+jsmain();
+
+function refresh() {
+    statusprovider.style.opacity = '0';
+    statusprovider.style.transition = 'opacity 0.12s ease-in';
+    customprovider.style.opacity = '0';
+    recheck.style.opacity = '1';
+    setTimeout(() => {
+    //window.location.reload(true);
+    statusprovider.style.transition = 'opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1)';
+    recheck.style.opacity = '0.6';
+    jsmain();
+    }, 120);
+}
