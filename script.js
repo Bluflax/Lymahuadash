@@ -12,15 +12,6 @@ const recheckuxstill = document.getElementById('portuxstill');
 //const theurl = 'https://zhere.next';
 const theurl = 'https://app.simplenote.com/publish/ttcS9n';
 
-
-
-function jsmain() {
-
-newuxtimeout = setTimeout(() => {
-    indicator.classList.remove('hidden');
-    statusprovider.style.opacity = '0.5';
-}, 1000);
-
 async function fetchContent(url) {
     try {
         const proxyUrl = 'https://api.allorigins.win/get?url=';
@@ -109,8 +100,15 @@ async function fetchContent(url) {
     }
 }
 
+function jsmain() {
 
-fetchContent(theurl);
+    newuxtimeout = setTimeout(() => {
+        indicator.classList.remove('hidden');
+        statusprovider.style.opacity = '0.5';
+    }, 1000);
+
+
+    fetchContent(theurl);
 
 }
 
