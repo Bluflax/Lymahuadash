@@ -33,15 +33,19 @@ async function fetchContent(url) {
 
         const textContent = doc.body.textContent || doc.body.innerText;
 
-        clearTimeout(newuxtimeout);
-        indicator.classList.remove('onboarding');
-        statusprovider.classList.remove('loading');
-        statustextcontainer.classList.remove('failed');
-
         
-        //recheckuxstill.classList.add('deactivateduxstill');
 
-        recheck.style.display = 'flex';
+        if (textContent.includes('status')) {
+            clearTimeout(newuxtimeout);
+            indicator.classList.remove('onboarding');
+            statusprovider.classList.remove('loading');
+            statustextcontainer.classList.remove('failed');
+
+            
+            //recheckuxstill.classList.add('deactivateduxstill');
+
+            recheck.style.display = 'flex';
+        }
 
         if (textContent.includes('status=s1')) {
             statustextcontainer.innerText = 'Working fine';
@@ -104,8 +108,7 @@ async function fetchContent(url) {
 function jsmain() {
 
     newuxtimeout = setTimeout(() => {
-        indicator.classList.remove('hidden');
-        statusprovider.classList.add('loading');
+        statusprovider.classList.remove('hidden');
     }, 1000);
 
 
