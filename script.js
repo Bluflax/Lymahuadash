@@ -12,6 +12,8 @@ const recheckuxstill = document.getElementById('portuxstill');
 //const theurl = 'https://zhere.next';
 const theurl = 'https://app.simplenote.com/publish/ttcS9n';
 
+
+
 async function fetchContent(url) {
     try {
         const proxyUrl = 'https://api.allorigins.win/get?url=';
@@ -34,11 +36,10 @@ async function fetchContent(url) {
         clearTimeout(newuxtimeout);
         indicator.classList.remove('onboarding');
         statusprovider.classList.remove('loading');
-        statusprovider.style.opacity = '0.9';
         statustextcontainer.classList.remove('failed');
 
         
-        recheckuxstill.classList.add('deactivateduxstill');
+        //recheckuxstill.classList.add('deactivateduxstill');
 
         recheck.style.display = 'flex';
 
@@ -96,7 +97,7 @@ async function fetchContent(url) {
         statustextcontainer.classList.add('failed');
         recheck.style.display = 'flex';
 
-        recheckux.classList.add('deactivatedux');
+        //recheckux.classList.add('deactivatedux');
     }
 }
 
@@ -104,7 +105,7 @@ function jsmain() {
 
     newuxtimeout = setTimeout(() => {
         indicator.classList.remove('hidden');
-        statusprovider.style.opacity = '0.5';
+        statusprovider.classList.add('loading');
     }, 1000);
 
 
@@ -125,10 +126,10 @@ function recheckeff() {
 jsmain();
 
 function refresh() {
-    recheckeff();
+    //recheckeff();
     //recheckux.classList.remove('deactivatedux');
-    recheckuxstill.classList.remove('deactivateduxstill');
-    statusprovider.style.opacity = '0';
+    //recheckuxstill.classList.remove('deactivateduxstill');
+    statusprovider.classList.add('loading');
     statusprovider.style.transition = 'opacity 0.12s ease-in';
     customprovider.style.opacity = '0';
     recheck.style.display = 'none';
