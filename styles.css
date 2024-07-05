@@ -16,7 +16,7 @@ body {
     font-family: 'SFD', Arial, sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
-    font-size: 14px;
+    font-size: 18px;
     user-select: none;
     overflow: hidden;
 }
@@ -86,6 +86,7 @@ body {
     position: fixed;
     bottom: 5px;
     left: 50%;
+    font-size: 14px;
     transform: translateX(-55px);
     opacity: 0.7;
 }
