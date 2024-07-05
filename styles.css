@@ -16,7 +16,7 @@ body {
     font-family: 'SFD', Arial, sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
-    font-size: 18px;
+    font-size: 16px;
     user-select: none;
     overflow: hidden;
 }
