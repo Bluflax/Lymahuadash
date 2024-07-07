@@ -101,6 +101,7 @@ body {
     letter-spacing: -0.5px;
     text-decoration: underline;
     opacity: 0.6;
+    user-select: none;
     cursor: pointer;
 }
 .newuxprovider {
