@@ -41,6 +41,7 @@ body {
     width: 68px;
     height: 68px;
     border-radius: 50%;
+    transition: all 0.15s ease-out;
 }
 
 .statustext {
